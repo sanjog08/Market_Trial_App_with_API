@@ -1,0 +1,362 @@
+[
+    {
+      "watchlist_1": false,
+      "company_name": "Reliance Industries",
+      "symbol": "RELIANCE",
+      "rate": "1500.25"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Tata Motors",
+      "symbol": "TATAMOTORS",
+      "rate": "800.50"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Infosys",
+      "symbol": "INFY",
+      "rate": "1200.75"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "HDFC Bank",
+      "symbol": "HDFCBANK",
+      "rate": "1800.30"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Sun Pharma",
+      "symbol": "SUNPHARMA",
+      "rate": "600.80"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Larsen & Toubro",
+      "symbol": "LT",
+      "rate": "1000.65"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Mahindra & Mahindra",
+      "symbol": "M&M",
+      "rate": "700.40"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "State Bank of India",
+      "symbol": "SBIN",
+      "rate": "900.20"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "ITC Limited",
+      "symbol": "ITC",
+      "rate": "1100.15"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "HCL Technologies",
+      "symbol": "HCLTECH",
+      "rate": "950.90"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Wipro",
+      "symbol": "WIPRO",
+      "rate": "850.10"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Bajaj Auto",
+      "symbol": "BAJAJ-AUTO",
+      "rate": "750.30"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "NTPC",
+      "symbol": "NTPC",
+      "rate": "680.60"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Bharti Airtel",
+      "symbol": "BHARTIARTL",
+      "rate": "820.45"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Adani Ports",
+      "symbol": "ADANIPORTS",
+      "rate": "950.80"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "ICICI Bank",
+      "symbol": "ICICIBANK",
+      "rate": "1050.70"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Axis Bank",
+      "symbol": "AXISBANK",
+      "rate": "980.20"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Hindustan Unilever",
+      "symbol": "HINDUNILVR",
+      "rate": "1300.60"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Power Grid Corporation",
+      "symbol": "POWERGRID",
+      "rate": "700.15"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Tata Consultancy Services",
+      "symbol": "TCS",
+      "rate": "1150.25"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Kotak Mahindra Bank",
+      "symbol": "KOTAKBANK",
+      "rate": "1020.35"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Bajaj Finance",
+      "symbol": "BAJFINANCE",
+      "rate": "980.80"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Maruti Suzuki",
+      "symbol": "MARUTI",
+      "rate": "1400.70"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Asian Paints",
+      "symbol": "ASIANPAINT",
+      "rate": "1120.90"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "HCL Infosystems",
+      "symbol": "HCL-INSYS",
+      "rate": "550.40"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Apollo Tyres",
+      "symbol": "APOLLOTYRE",
+      "rate": "680.70"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Biocon",
+      "symbol": "BIOCON",
+      "rate": "800.30"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "HDFC Asset Management",
+      "symbol": "HDFCAMC",
+      "rate": "950.20"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Adani Enterprises",
+      "symbol": "ADANIENT",
+      "rate": "900.40"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Bharat Petroleum",
+      "symbol": "BPCL",
+      "rate": "850.25"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "JSW Steel",
+      "symbol": "JSWSTEEL",
+      "rate": "930.50"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Dr. Reddy's Laboratories",
+      "symbol": "DRREDDY",
+      "rate": "1200.80"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "ONGC",
+      "symbol": "ONGC",
+      "rate": "920.15"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Coal India",
+      "symbol": "COALINDIA",
+      "rate": "750.60"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Ultratech Cement",
+      "symbol": "ULTRACEMCO",
+      "rate": "1100.40"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Grasim Industries",
+      "symbol": "GRASIM",
+      "rate": "1000.20"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "GAIL (India)",
+      "symbol": "GAIL",
+      "rate": "800.70"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Vedanta",
+      "symbol": "VEDL",
+      "rate": "890.80"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Yes Bank",
+      "symbol": "YESBANK",
+      "rate": "660.90"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Hindustan Zinc",
+      "symbol": "HINDZINC",
+      "rate": "750.50"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Dr. Lal PathLabs",
+      "symbol": "LALPATHLAB",
+      "rate": "960.75"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Aurobindo Pharma",
+      "symbol": "AUROPHARMA",
+      "rate": "850.35"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "TVS Motor Company",
+      "symbol": "TVSMOTOR",
+      "rate": "760.60"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "MRF",
+      "symbol": "MRF",
+      "rate": "1300.40"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Siemens",
+      "symbol": "SIEMENS",
+      "rate": "980.25"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Tata Steel",
+      "symbol": "TATASTEEL",
+      "rate": "920.80"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Cadila Healthcare",
+      "symbol": "CADILAHC",
+      "rate": "840.70"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "BHEL",
+      "symbol": "BHEL",
+      "rate": "660.20"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Hero MotoCorp",
+      "symbol": "HEROMOTOCO",
+      "rate": "980.60"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Havells India",
+      "symbol": "HAVELLS",
+      "rate": "840.90"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Hindalco Industries",
+      "symbol": "HINDALCO",
+      "rate": "950.80"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Emami",
+      "symbol": "EMAMILTD",
+      "rate": "780.30"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Dabur India",
+      "symbol": "DABUR",
+      "rate": "900.10"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Reliance Power",
+      "symbol": "RPOWER",
+      "rate": "680.40"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "JSW Energy",
+      "symbol": "JSWENERGY",
+      "rate": "750.65"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Cipla",
+      "symbol": "CIPLA",
+      "rate": "800.70"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Ambuja Cements",
+      "symbol": "AMBUJACEM",
+      "rate": "980.60"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Trent",
+      "symbol": "TRENT",
+      "rate": "850.75"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "JSW Cement",
+      "symbol": "JSWCEM",
+      "rate": "820.40"
+    },
+    {
+      "watchlist_1": false,
+      "company_name": "Apollo Hospitals",
+      "symbol": "APOLLOHOSP",
+      "rate": "1050.30"
+    }
+  ]

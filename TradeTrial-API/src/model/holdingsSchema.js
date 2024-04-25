@@ -22,6 +22,10 @@ const holdingSchema = new mongoose.Schema({
     quantity: {
         type: Number,
         require: true
+    },
+    real_rate: {
+        type: Number,
+        require: false
     }
 });
 

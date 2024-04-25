@@ -8,7 +8,7 @@ class AllStocksModel {
   String id;
   String stockName;
   String companyName;
-  double rate;
+  num rate;
 
   AllStocksModel({
     required this.id,
@@ -35,7 +35,7 @@ class AllStocksModel {
 // url variable for all wi-fi's
 const mobile = '192.168.66.175';
 const home = '192.168.29.117';
-const hostel = '192.168.1.18';
+const hostel = '192.168.1.12';
 
 // switch url IP-address from here
 const wifi = hostel;

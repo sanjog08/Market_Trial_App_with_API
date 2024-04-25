@@ -24,6 +24,23 @@ Future<List<AllStocksModel?>> getData( List<AllStocksModel?> watchlist_stocks, i
   }
 }
 
+// to update real time stock rate
+void updateRate(int page) async {
+  try {
+    final response = await http.get(Uri.parse('http://$wifi:7000/reload-$page'));
+    if (response.statusCode == 200) {
+      // Handle the successful response here
+      print('Data fetched successfully');
+    } else {
+      // Handle the error response
+      print('Failed to fetch data. Status code: ${response.statusCode}');
+    }
+  } catch (error) {
+    // Handle any exceptions
+    print('Error fetching data: $error');
+  }
+}
+
 // this is the delete function for the stock got deleted from the any watchlist dynamically
 Future<void> deleteStock(String id, int page ) async {
   final call_API = "http://$wifi:7000/delwatchlist_$page/$id";

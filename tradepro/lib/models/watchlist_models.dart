@@ -4,7 +4,7 @@ class watchlist_class {
   String? id;
   String? symbol;
   String? company_name;
-  double? rate;
+  num? rate;
 
   watchlist_class(this.id, this.symbol, this.company_name, this.rate);
 }

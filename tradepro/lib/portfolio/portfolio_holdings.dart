@@ -42,17 +42,22 @@ class _holdingsState extends State<holdings> {
 
   Future<List<HoldingModel?>> getData() async {
     try {
-      final call_API = "http://$wifi:7000/holdings";
+      const call_API = "http://$wifi:7000/holdings";
       final response = await http.get(Uri.parse(call_API));
       if (response.statusCode == 200) {
         holding_list.clear();
         invested = 0;
+        current = 0;
         var data = jsonDecode(response.body.toString());
         for (Map<String, dynamic> index in data) {
-          double? rate = index['rate'];
-          double? quantity = index['quantity']!.toDouble();
+          num? rate = index['rate'];
+          num? realRate = index['real_rate'];       //  !.toDouble();
+          num? quantity = index['quantity'];        //  !.toDouble();
           if (rate != null && quantity != null) {
             invested += (rate * quantity);
+          }
+          if (realRate != null && quantity != null) {
+            current += (realRate * quantity);
           }
           holding_list.add(HoldingModel.fromJson(index));
         }
@@ -68,11 +73,17 @@ class _holdingsState extends State<holdings> {
       return []; // Return an empty list in case of an exception
     }
   }
-  // invested async function to get data after the holdings loaded
-  // once holdings loaded then our invested amount get calculate
+  // invested and current async function to get data after the holdings loaded
+  // once holdings loaded then our invested and current amount get calculated
   double invested = 0.0;
   double _displayInvested = 0.0;
   bool displayInvested = false;
+  double current = 0.0;
+  double _displayCurrent = 0.0;
+  bool displayCurrent = false;
+  double pnl = 0.0;
+  double _displayPnL = 0.0;
+  bool displayPnL = false;
   @override
   void initState() {
     super.initState();
@@ -80,9 +91,19 @@ class _holdingsState extends State<holdings> {
     Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         _displayInvested = invested;
+        _displayCurrent = current;
+        pnl = current-invested;
+        // pnl = -4565;
+        _displayPnL = (pnl)/invested*100;
       });
     });
   }
+
+  Color getPnlColor(num x) {
+    return x > 0 ? Colors.green : Colors.red;
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +114,8 @@ class _holdingsState extends State<holdings> {
           child: Container(
 
             decoration: BoxDecoration(
-              color: Color(0xFFE0E0E0),
+              // color: Color(0xFFE0E0E0),
+              color: Color(0xFFEEEEEE),
               borderRadius: BorderRadius.circular(8),
             ),
             padding: EdgeInsets.all(20.0),
@@ -111,8 +133,8 @@ class _holdingsState extends State<holdings> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(_displayInvested.toStringAsFixed(2), style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-                    Text(_displayInvested.toStringAsFixed(2), style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
+                    Text(_displayInvested.toStringAsFixed(2), style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),),
+                    Text(_displayCurrent.toStringAsFixed(2), style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400, color: getPnlColor(_displayCurrent-_displayInvested)),),
                   ],
                 ),
                 SizedBox(height: 10,),
@@ -122,7 +144,7 @@ class _holdingsState extends State<holdings> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('P&L', style: TextStyle(fontSize: 16, color: Color(0xFF616161)),),
-                    Text('+00.00 (0.00%)', style: TextStyle(fontSize: 16, color: Colors.green),),
+                    Text('${pnl.toStringAsFixed(2)} (${_displayPnL.toStringAsFixed(2)}%)', style: TextStyle(fontSize: 16, color: getPnlColor(pnl)),),
                   ],
                 ),
               ],
@@ -153,7 +175,7 @@ class _holdingsState extends State<holdings> {
                       });
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(14.0),
                       child: Column(
                         children: [
                           Row(
@@ -161,28 +183,44 @@ class _holdingsState extends State<holdings> {
                             children: [
                               Row(
                                 children: [
-                                  Text('Qty. ${holding_list[index]?.quantity}', style: TextStyle(fontSize: 14, color: Color(0xFF616161),),),
+                                  Row(
+                                    children: [
+                                      Text('Qty. ', style: TextStyle(fontSize: 13, color: Color(0xFF616161),),),
+                                      Text('${holding_list[index]?.quantity}', style: TextStyle(fontSize: 13, color: Colors.grey.shade900,),)
+                                    ],
+                                  ),
                                   SizedBox(width: 6,),
-                                  Text('Avg. ${holding_list[index]?.rate.toStringAsFixed(2)}', style: TextStyle(fontSize: 14, color: Color(0xFF616161),),),
+                                  Row(
+                                    children: [
+                                      Text('Avg. ', style: TextStyle(fontSize: 13, color: Color(0xFF616161),),),
+                                      Text('${holding_list[index]?.rate.toStringAsFixed(2)}', style: TextStyle(fontSize: 13, color: Colors.grey.shade900,),)
+                                    ],
+                                  ),
                                 ],
                               ),
-                              Text('+0.00', style: TextStyle(fontSize: 14, color: Color(0xFF616161),),),
+                              Text('${(holding_list[index]!.quantity*(holding_list[index]!.realRate-holding_list[index]!.rate)).toStringAsFixed(2)}', style: TextStyle(fontSize: 14, color: getPnlColor(holding_list[index]!.realRate-holding_list[index]!.rate),),),
                             ],
                           ),
-                          SizedBox(height: 5,),
+                          SizedBox(height: 8,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(holding_list[index]!.stockName, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-                              Text('${(holding_list[index]!.rate * holding_list[index]!.quantity).toStringAsFixed(2)}', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),),
+                              Text(holding_list[index]!.stockName, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),),
+                              Text('${(holding_list[index]!.realRate * holding_list[index]!.quantity).toStringAsFixed(2)}', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: getPnlColor(holding_list[index]!.realRate-holding_list[index]!.rate)),),
                             ],
                           ),
-                          SizedBox(height: 5,),
+                          SizedBox(height: 8,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(holding_list[index]!.se, style: TextStyle(fontSize: 16, color: Color(0xFF757575),),),
-                              Text('LTP. ${holding_list[index]?.rate}', style: TextStyle(fontSize: 16, color: Color(0XFF757575),),),
+                              Text(holding_list[index]!.se, style: TextStyle(fontSize: 13, color: Color(0xFF757575),),),
+                              Row(
+                                children: [
+                                  Text('LTP.', style: TextStyle(fontSize: 13, color: Color(0XFF757575),),),
+                                  Text(' ${holding_list[index]?.realRate} ', style: TextStyle(fontSize: 13, color: Colors.grey.shade900),),
+                                  Text('(${(holding_list[index]!.realRate-holding_list[index]!.rate).toStringAsFixed(2)}%)', style: TextStyle(fontSize: 13, color: getPnlColor(holding_list[index]!.realRate-holding_list[index]!.rate)),),
+                                ],
+                              ),
                             ],
                           ),
                         ],

@@ -11,9 +11,10 @@ String holdingModelToJson(HoldingModel data) => json.encode(data.toJson());
 class HoldingModel {
   String id;
   String stockName;
-  double rate;
+  num rate;
   String se;
   int quantity;
+  num realRate;
 
   HoldingModel({
     required this.id,
@@ -21,6 +22,7 @@ class HoldingModel {
     required this.rate,
     required this.se,
     required this.quantity,
+    required this.realRate,
   });
 
   factory HoldingModel.fromJson(Map<String, dynamic> json) => HoldingModel(
@@ -29,6 +31,7 @@ class HoldingModel {
     rate: json["rate"]?.toDouble(),
     se: json["se"],
     quantity: json["quantity"],
+    realRate: json["real_rate"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -36,5 +39,6 @@ class HoldingModel {
     "rate": rate,
     "se": se,
     "quantity": quantity,
+    "real_rate": realRate,
   };
 }

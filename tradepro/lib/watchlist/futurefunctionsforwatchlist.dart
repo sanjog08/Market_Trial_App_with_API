@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 // this is the function to retreve stocks data for any watchlist dynamically
 Future<List<AllStocksModel?>> getData( List<AllStocksModel?> watchlist_stocks, int page ) async {
-  final call_API = "http://$wifi:7000/getwatchlist_$page";
+  final call_API = "http://$wifi/getwatchlist_$page";
   final response = await http.get(Uri.parse(call_API));
   var data =  jsonDecode(response.body.toString());
   if (response.statusCode == 200) {
@@ -27,7 +27,7 @@ Future<List<AllStocksModel?>> getData( List<AllStocksModel?> watchlist_stocks, i
 // to update real time stock rate
 void updateRate(int page) async {
   try {
-    final response = await http.get(Uri.parse('http://$wifi:7000/reload-$page'));
+    final response = await http.get(Uri.parse('http://$wifi/reload-$page'));
     if (response.statusCode == 200) {
       // Handle the successful response here
       print('Data fetched successfully');
@@ -43,7 +43,7 @@ void updateRate(int page) async {
 
 // this is the delete function for the stock got deleted from the any watchlist dynamically
 Future<void> deleteStock(String id, int page ) async {
-  final call_API = "http://$wifi:7000/delwatchlist_$page/$id";
+  final call_API = "http://$wifi/delwatchlist_$page/$id";
   try {
     final response = await http.delete(Uri.parse(call_API));
     if (response.statusCode == 200) {
@@ -233,7 +233,7 @@ class _DailogWidgetState extends State<DailogWidget> {
   // this function adds the selected stock from the watchlist to the holding page
   Future<HoldingModel?> addData() async {
     try {
-      final call_API = "http://$wifi:7000/holding";
+      final call_API = "http://$wifi/holding";
       var response = await http.post(
         Uri.parse(call_API),
         headers: {"Content-Type": "application/json"},

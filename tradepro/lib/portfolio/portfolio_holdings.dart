@@ -42,7 +42,7 @@ class _holdingsState extends State<holdings> {
 
   Future<List<HoldingModel?>> getData() async {
     try {
-      const call_API = "http://$wifi:7000/holdings";
+      const call_API = "http://$wifi/holdings";
       final response = await http.get(Uri.parse(call_API));
       if (response.statusCode == 200) {
         holding_list.clear();
@@ -437,7 +437,7 @@ class _DailogWidgetHoldingState extends State<DailogWidgetHolding> {
   // this function adds the selected stock from the watchlist to the holding page
   Future<HoldingModel?> addData() async {
     try {
-      final call_API = "http://$wifi:7000/holding";
+      final call_API = "http://$wifi/holding";
       var response = await http.post(
         Uri.parse(call_API),
         headers: {"Content-Type": "application/json"},
@@ -467,7 +467,7 @@ class _DailogWidgetHoldingState extends State<DailogWidgetHolding> {
 
   // delete stock from the holding list because user sell all it's equity
   Future<void> deleteStockFromHolding(String id) async {
-    final call_API = "http://$wifi:7000/delholding/$id";
+    final call_API = "http://$wifi/delholding/$id";
     try {
       final response = await http.delete(Uri.parse(call_API));
       if (response.statusCode == 200) {
@@ -485,7 +485,7 @@ class _DailogWidgetHoldingState extends State<DailogWidgetHolding> {
   // update function
   Future<void> updateStockQuantity(String id, int newQuantity) async {
     try {
-      var url = Uri.parse('http://$wifi:7000/sellholding/$id');
+      var url = Uri.parse('http://$wifi/sellholding/$id');
       // Define the request body containing the new quantity
       Map<String, dynamic> requestBody = {
         "quantity": newQuantity,

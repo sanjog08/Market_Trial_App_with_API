@@ -36,7 +36,8 @@ class AllStocksModel {
 const mobile = '192.168.66.175';
 const home = '192.168.29.117';
 const hostel = '192.168.1.12';
+const _vercel = 'deployed-stock-api.vercel.app';
 
 // switch url IP-address from here
-const wifi = hostel;
+const wifi = _vercel;
 // update this wifi on your presence

@@ -70,7 +70,7 @@ class _searchState extends State<search> {
   // API call to search for stocks according to the query got typed in the search bar
   void _search() async {
     String query = _searchController.text;
-    String call_API = 'http://$wifi:7000/stocks/search?q=$query';
+    String call_API = 'http://$wifi/stocks/search?q=$query';
     final response = await http.get(Uri.parse(call_API));
     if (response.statusCode == 200) {
       setState( () {
@@ -145,7 +145,7 @@ class _searchState extends State<search> {
   // addToWatchlist function calls API to add selected stock in the respected watchlist
   Future<void> addToWatchlist(String id, int page) async {
     try {
-      final call_API = 'http://$wifi:7000/watchlist_$page/$id';
+      final call_API = 'http://$wifi/watchlist_$page/$id';
       final response = await http.post(
         Uri.parse(call_API),
         headers: {"Content-Type": "application/json"},
